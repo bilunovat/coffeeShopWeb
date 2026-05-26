@@ -1,0 +1,110 @@
+/* === Design Tokens === */
+:root {
+  --color-primary: #3e2723;
+  --color-primary-medium: #5d4037;
+  --color-primary-light: #8d6e63;
+  --color-accent: #002c96;
+
+  --color-text: #3e2723;
+  --color-text-dark: #1a1a1a;
+  --color-text-body: #333;
+  --color-text-muted: #6f5b52;
+  --color-text-subtle: #b09a90;
+  --color-text-light: #fff8f0;
+
+  --color-bg-cream: #f4efe3;
+  --color-bg-cream-light: #f2f2f1;
+  --color-bg-card: #ffffff;
+  --color-bg-elevated: #f9f7f3;
+  --color-bg-closed: #fff5f5;
+
+  --color-border: #e6d6cd;
+  --color-border-light: #f0e5dd;
+  --color-border-medium: #d7c5b9;
+
+  --color-status-accepted: #b26a00;
+  --color-status-accepted-bg: #fff3e0;
+  --color-status-progress: #002c96;
+  --color-status-progress-bg: #e3f2fd;
+  --color-status-done: #2d7d32;
+  --color-status-open: #0f5132;
+  --color-status-done-bg: #e8f5e9;
+  --color-status-done-light: #c8e6c9;
+  --color-status-collected: #00838f;
+  --color-status-collected-bg: #e0f7fa;
+  --color-status-open-bg: #d1e7dd;
+  --color-status-cancelled: #842029;
+  --color-status-cancelled-bg: #f8d7da;
+  --color-status-closed: #c62828;
+
+  --color-error: #b71c1c;
+  --color-error-bg: #ffebee;
+  --color-error-bg-light: #fff1f1;
+  --color-error-border: #f1c3c3;
+  --color-error-border-light: #f0c9c9;
+
+  --color-success: #10b981;
+  --color-success-dark: #1b5e20;
+  --color-success-accent: #2e7d32;
+
+  --color-accent-brown: #9b6c5f;
+  --color-accent-warm: #8d5524;
+  --color-accent-dark: #4e342e;
+
+  --color-cool-text: #1e293b;
+  --color-cool-text-light: #64748b;
+  --color-cool-bg: #f1f5f9;
+  --color-cool-bg-hover: #e2e8f0;
+  --color-cool-border: #e2e8f0;
+
+  --color-modern-error-bg: #fef2f2;
+
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.08);
+  --shadow-card-heavy: 0 6px 14px rgba(45, 24, 16, 0.06);
+  --shadow-elevated: 0 8px 22px rgba(0, 0, 0, 0.15);
+  --shadow-header: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* === Reset === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Base Layout === */
+html,
+body,
+#app {
+  height: 100%;
+  min-height: 100dvh;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--color-bg-cream);
+  color: var(--color-text);
+}
+
+#app {
+  width: 100%;
+}
+
+/* === Utilities === */
+button {
+  font-family: inherit;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}

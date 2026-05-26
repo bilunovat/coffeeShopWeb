@@ -1,0 +1,75 @@
+/* Light, unobtrusive motion for page and component transitions */
+:root {
+  --ui-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes fade-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+body {
+  animation: fade-up-in 320ms var(--ui-ease);
+}
+
+main,
+section,
+.card,
+.panel,
+.menu-item,
+.order-item {
+  animation: soft-pop 260ms var(--ui-ease);
+}
+
+a,
+button {
+  transition:
+    transform 180ms var(--ui-ease),
+    box-shadow 180ms var(--ui-ease),
+    opacity 180ms var(--ui-ease);
+}
+
+a:hover,
+button:hover {
+  transform: translateY(-1px);
+}
+
+/* Vue transition helper classes (available when <Transition name="fade-slide"> is used) */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition:
+    opacity 220ms var(--ui-ease),
+    transform 220ms var(--ui-ease);
+}
+
+.fade-slide-enter-from,
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}
