@@ -1,6 +1,8 @@
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080';
+
 class ApiClient {
-  constructor() {
-    this.baseURL = '';
+  constructor(baseURL = API_BASE_URL) {
+    this.baseURL = baseURL;
     this.defaultHeaders = {
       'Content-Type': 'application/json',
     };
@@ -101,13 +103,14 @@ class ApiClient {
 
   /** Sends a GET request. */
   async get(endpoint, options = {}) {
-    return this.request(endpoint, { ...options, method: 'GET' });
+    return this.request(endpoint, { ...options, withCredentials: true, method: 'GET' });
   }
 
   /** Sends a POST request with a JSON body. */
   async post(endpoint, data, options = {}) {
     return this.request(endpoint, {
       ...options,
+      withCredentials: true,
       method: 'POST',
       body: JSON.stringify(data),
     });
@@ -117,6 +120,7 @@ class ApiClient {
   async put(endpoint, data, options = {}) {
     return this.request(endpoint, {
       ...options,
+      withCredentials: true,
       method: 'PUT',
       body: JSON.stringify(data),
     });
@@ -124,7 +128,7 @@ class ApiClient {
 
   /** Sends a DELETE request. */
   async delete(endpoint, options = {}) {
-    return this.request(endpoint, { ...options, method: 'DELETE' });
+    return this.request(endpoint, { ...options, withCredentials: true, method: 'DELETE' });
   }
 
   /** Persists or clears the JWT auth token in localStorage. */
