@@ -10,9 +10,6 @@ RUN npm install
 # Stage 2: Build the Vue app ###################################################
 FROM deps AS build
 
-ARG VITE_API_BASE_URL
-ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
-
 WORKDIR /build
 
 COPY ./ .

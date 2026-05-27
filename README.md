@@ -1,5 +1,7 @@
 # Whistlestop Coffee Hut
 
+**[View Live Site](https://coffeeshopweb-production.up.railway.app)**
+
 Multi-station coffee ordering system built for a kiosk at Cramlington Station. Customers browse the menu, place orders for a chosen pickup time, and track order status. Staff manage incoming orders through a dashboard, update statuses, and archive completed orders.
 
 ## Tech Stack
@@ -7,11 +9,12 @@ Multi-station coffee ordering system built for a kiosk at Cramlington Station. C
 | Layer | Technology |
 |---|---|
 | Frontend | Vue 3, Vite, Pinia, Vue Router |
-| Backend | Java 21, Spring Boot 3 |
+| Backend | Java 17, Spring Boot 3 |
 | Database | MySQL |
 | Auth | JWT (JSON Web Tokens) |
 | Payment | [HorsePay](http://homepages.cs.ncl.ac.uk/daniel.nesbitt/CSC8019/HorsePay/HorsePay.php) external gateway |
 | Containerisation | Docker |
+| Deployment | [Railway](https://railway.app) |
 
 ## Features
 
@@ -44,6 +47,13 @@ The backend follows a layered architecture: **Controller → DTO → Service →
 
 The frontend uses Pinia stores for state management and a shared `apiClient` module for all HTTP communication with the backend.
 
+## Staff Dashboard
+
+The staff dashboard is accessible at `/staff-login`. Use these credentials to explore it:
+
+- **Username:** `admin`
+- **Password:** `Admin123!`
+
 ## Payment Integration
 
 Order creation and payment processing are decoupled:
@@ -58,7 +68,7 @@ This mirrors real-world async payment flows (Stripe webhooks, PayPal IPN). If th
 ### Prerequisites
 
 - Java 17+
-- Node.js 18+
+- Node.js 22+
 - MySQL 8+
 
 ### Backend
@@ -79,13 +89,13 @@ npm install
 npm run dev
 ```
 
-The app runs at `http://localhost:5173` by default.
+The app runs at `http://localhost:5173` by default. API requests are proxied to the backend via the Vite dev server config.
 
 ## Docker
 
 > Docker containerisation was not required by the project brief. I added it to practice and build familiarity with containerised deployments.
 
-Three services: **frontend** (nginx), **backend** (Spring Boot), and **db** (MySQL 8.0).
+Three services: **frontend** (nginx with reverse proxy to backend), **backend** (Spring Boot), and **db** (MySQL 8.0).
 
 ```bash
 # 1. Copy .env.example and fill in your values
@@ -104,7 +114,7 @@ docker compose down
 | Backend API | http://localhost:8080 | 8080 |
 | MySQL | localhost | 3306 |
 
-Configuration is managed through a `.env` file (gitignored) — see `.env.example` for required variables. Database data persists in a Docker volume between restarts.
+Configuration is managed through a `.env` file (gitignored) — see `.env.example` for required variables. Database data persists in a Docker volume between restarts. The nginx config proxies all `/api/` requests to the backend, so CORS is not needed in this setup.
 
 ## Screenshots
 
@@ -116,7 +126,7 @@ Configuration is managed through a `.env` file (gitignored) — see `.env.exampl
 
 ## Contribution Acknowledgments
 
-Originally built as a team project for CSC8019 at Newcastle University. My contributions: purchase order backend flow (creation, status updates, archiving), backend test suite, backend standardisation and consistency, Docker containerisation, deployment, and UI design enhancements. Published with teammates' permission.
+Originally built as a team project for CSC8019 at Newcastle University. My contributions: purchase order backend flow (creation, status updates, archiving), backend test suite, backend standardisation and consistency, Docker containerisation, Railway deployment, and UI design enhancements. Published with teammates' permission.
 
 ---
 
