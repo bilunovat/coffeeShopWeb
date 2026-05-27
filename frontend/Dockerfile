@@ -22,7 +22,8 @@ RUN npm run build
 # Stage 3: Serve the built files ###############################################
 FROM nginx:alpine AS final
 
-COPY --from=build build/dist /usr/share/nginx/html
+COPY --from=build /build/dist /usr/share/nginx/html
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
