@@ -5,8 +5,7 @@ WORKDIR /build
 
 COPY package.json package-lock.json* ./
 
-RUN --mount=type=cache,target=/root/.npm \
-    npm install
+RUN npm install
 
 # Stage 2: Build the Vue app ###################################################
 FROM deps AS build

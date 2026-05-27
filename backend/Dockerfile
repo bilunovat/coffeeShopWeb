@@ -5,8 +5,7 @@ WORKDIR /build
 
 COPY pom.xml .
 
-RUN --mount=type=cache,target=/root/.m2 \
-    mvn dependency:go-offline -DskipTests
+RUN mvn dependency:go-offline -DskipTests
 
 # Stage 2: Build the Java app ###################################################
 FROM deps AS package
@@ -14,8 +13,7 @@ FROM deps AS package
 WORKDIR /build
 
 COPY ./ .
-RUN --mount=type=cache,target=/root/.m2 \
-    mvn package -DskipTests && \
+RUN mvn package -DskipTests && \
     mv target/*.jar target/app.jar
 
 # Stage 3: Run the application ##################################################
@@ -32,7 +30,7 @@ RUN adduser \
     appuser
 USER appuser
 
-COPY --from=package build/target/app.jar app.jar
+COPY --from=package /build/target/app.jar app.jar
 
 EXPOSE 8080
 
