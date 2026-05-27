@@ -33,7 +33,7 @@ public class SecurityConfig {
     private final RestAccessDeniedHandler restAccessDeniedHandler;
 
     @Value(
-            "${app.cors.allowed-origins:http://localhost:5173,http://127.0.0.1:5173,http://localhost}")
+            "${app.cors.allowed-origins:http://localhost:5173,http://127.0.0.1:5173,http://localhost,https://coffeeshopweb-production-3ca5.up.railway.app}")
     private String allowedOrigins;
 
     /**
