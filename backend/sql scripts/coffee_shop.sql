@@ -1,8 +1,8 @@
 -- Whistlestop Coffee Hut - Database Schema
 -- Target: MySQL 8.0+
 
-CREATE DATABASE IF NOT EXISTS coffee_shop1;
-USE coffee_shop1;
+CREATE DATABASE IF NOT EXISTS coffee_shop;
+USE coffee_shop;
 
 -- Staff accounts (authenticated via JWT)
 CREATE TABLE staff (
