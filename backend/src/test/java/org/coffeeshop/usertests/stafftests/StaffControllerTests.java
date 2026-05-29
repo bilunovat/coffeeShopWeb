@@ -81,7 +81,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that creating a staff member with a null username returns 400 Bad Request, as
-         * the @NotNull constraint on CreateStaffDto.username rejects null values.
+         * the @NotBlank constraint on CreateStaffDto.username rejects null values.
          *
          * @throws Exception if the MockMvc request fails
          */
@@ -142,7 +142,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that creating a staff member with a null first name returns 400 Bad Request, as
-         * the @NotNull constraint on CreateStaffDto.firstName rejects null values.
+         * the @NotBlank constraint on CreateStaffDto.firstName rejects null values.
          *
          * @throws Exception if the MockMvc request fails
          */
@@ -184,7 +184,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that creating a staff member with a null last name returns 400 Bad Request, as
-         * the @NotNull constraint on CreateStaffDto.lastName rejects null values.
+         * the @NotBlank constraint on CreateStaffDto.lastName rejects null values.
          *
          * @throws Exception if the MockMvc request fails
          */
@@ -247,7 +247,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that creating a staff member with a null role returns 400 Bad Request, as
-         * the @NotNull constraint on CreateStaffDto.role rejects null values.
+         * the @NotBlank constraint on CreateStaffDto.role rejects null values.
          *
          * @throws Exception if the MockMvc request fails
          */
@@ -289,7 +289,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that creating a staff member with a null password returns 400 Bad Request, as
-         * the @NotNull constraint on CreateStaffDto.password rejects null values.
+         * the @NotBlank constraint on CreateStaffDto.password rejects null values.
          *
          * @throws Exception if the MockMvc request fails
          */
@@ -529,7 +529,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that updating a staff member with a null first name returns 400 Bad Request, as
-         * the @NotNull constraint on UpdateStaffDto.firstName rejects null values, and that a
+         * the @NotBlank constraint on UpdateStaffDto.firstName rejects null values, and that a
          * subsequent GET confirms the existing staff member was not modified.
          *
          * @throws Exception if the MockMvc request fails
@@ -587,7 +587,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that updating a staff member with a null last name returns 400 Bad Request, as
-         * the @NotNull constraint on UpdateStaffDto.lastName rejects null values, and that a
+         * the @NotBlank constraint on UpdateStaffDto.lastName rejects null values, and that a
          * subsequent GET confirms the existing staff member was not modified.
          *
          * @throws Exception if the MockMvc request fails
@@ -645,7 +645,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that updating a staff member with a null role returns 400 Bad Request, as
-         * the @NotNull constraint on UpdateStaffDto.role rejects null values, and that a subsequent
+         * the @NotBlank constraint on UpdateStaffDto.role rejects null values, and that a subsequent
          * GET confirms the existing staff member was not modified.
          *
          * @throws Exception if the MockMvc request fails
@@ -703,7 +703,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that updating a staff member with a null username returns 400 Bad Request, as
-         * the @NotNull constraint on UpdateStaffDto.username rejects null values, and that a
+         * the @NotBlank constraint on UpdateStaffDto.username rejects null values, and that a
          * subsequent GET confirms the existing staff member was not modified.
          *
          * @throws Exception if the MockMvc request fails
@@ -759,7 +759,7 @@ class StaffControllerTests {
 
         /**
          * Verifies that updating a staff member with a null password returns 400 Bad Request, as
-         * the @NotNull constraint on UpdateStaffDto.password rejects null values, and that a
+         * the @NotBlank constraint on UpdateStaffDto.password rejects null values, and that a
          * subsequent GET confirms the existing staff member was not modified.
          *
          * @throws Exception if the MockMvc request fails

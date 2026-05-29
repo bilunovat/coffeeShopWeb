@@ -1,7 +1,6 @@
 package org.coffeeshop.users.dtos;
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 /**
@@ -10,8 +9,8 @@ import jakarta.validation.constraints.Size;
  * transferred it is made up of Attributes in the staff entity
  */
 public record UpdateStaffDto(
-        @NotNull @NotBlank @Size(min = 3, max = 50) String username,
-        @NotNull @NotBlank @Size(min = 1, max = 50) String firstName,
-        @NotNull @NotBlank @Size(min = 1, max = 50) String lastName,
-        @NotNull @NotBlank String role,
-        @NotNull @NotBlank @Size(min = 6, max = 25) String password) {}
+        @NotBlank @Size(min = 3, max = 50) String username,
+        @NotBlank @Size(min = 1, max = 50) String firstName,
+        @NotBlank @Size(min = 1, max = 50) String lastName,
+        @NotBlank String role,
+        @NotBlank @Size(min = 6, max = 25) String password) {}

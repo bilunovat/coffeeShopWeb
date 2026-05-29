@@ -103,7 +103,7 @@ class MenuItemControllerTests {
 
         /**
          * Verifies that creating a menu item with a null name returns 400 Bad Request, as
-         * the @NotNull constraint on CreateMenuItemDto.name rejects null values.
+         * the @NotBlank constraint on CreateMenuItemDto.name rejects null values.
          *
          * @throws Exception if the MockMvc request fails
          */

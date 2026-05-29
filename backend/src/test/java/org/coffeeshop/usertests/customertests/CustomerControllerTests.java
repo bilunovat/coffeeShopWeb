@@ -76,7 +76,7 @@ class CustomerControllerTests {
 
         /**
          * Verifies that creating a customer with a null first name returns 400 Bad Request, as
-         * the @NotNull constraint on CreateCustomerDto.customerFirstName rejects null values.
+         * the @NotBlank constraint on CreateCustomerDto.customerFirstName rejects null values.
          *
          * @throws Exception if the MockMvc request fails
          */
@@ -114,7 +114,7 @@ class CustomerControllerTests {
 
         /**
          * Verifies that creating a customer with a null last name returns 400 Bad Request, as
-         * the @NotNull constraint on CreateCustomerDto.customerLastName rejects null values.
+         * the @NotBlank constraint on CreateCustomerDto.customerLastName rejects null values.
          *
          * @throws Exception if the MockMvc request fails
          */
@@ -340,7 +340,7 @@ class CustomerControllerTests {
 
         /**
          * Verifies that updating a customer with a null first name returns 400 Bad Request, as
-         * the @NotNull constraint on UpdateCustomerDto.customerFirstName rejects null values, and
+         * the @NotBlank constraint on UpdateCustomerDto.customerFirstName rejects null values, and
          * that a subsequent GET confirms the existing customer was not modified.
          *
          * @throws Exception if the MockMvc request fails
