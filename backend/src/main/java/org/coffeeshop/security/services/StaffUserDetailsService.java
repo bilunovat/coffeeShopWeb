@@ -1,8 +1,9 @@
 package org.coffeeshop.security.services;
 
 import java.util.List;
-import org.coffeeshop.security.SecurityRoleUtils;
-import org.coffeeshop.security.StaffUserDetails;
+
+import org.coffeeshop.security.models.StaffUserDetails;
+import org.coffeeshop.security.utils.SecurityRoleUtils;
 import org.coffeeshop.users.models.Staff;
 import org.coffeeshop.users.repositories.StaffRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

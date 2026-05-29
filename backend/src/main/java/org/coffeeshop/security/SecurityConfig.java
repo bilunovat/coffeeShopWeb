@@ -3,7 +3,10 @@ package org.coffeeshop.security;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.coffeeshop.security.filters.JwtAuthenticationFilter;
 import org.coffeeshop.security.handlers.RestAccessDeniedHandler;
+import org.coffeeshop.security.handlers.RestAuthenticationEntryPoint;
 import org.coffeeshop.security.services.StaffUserDetailsService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

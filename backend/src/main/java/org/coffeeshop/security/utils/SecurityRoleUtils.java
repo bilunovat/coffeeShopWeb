@@ -1,4 +1,4 @@
-package org.coffeeshop.security;
+package org.coffeeshop.security.utils;
 
 import java.util.Locale;
 

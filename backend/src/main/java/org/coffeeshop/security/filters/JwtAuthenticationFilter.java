@@ -1,4 +1,4 @@
-package org.coffeeshop.security;
+package org.coffeeshop.security.filters;
 
 import io.jsonwebtoken.JwtException;
 import jakarta.servlet.FilterChain;

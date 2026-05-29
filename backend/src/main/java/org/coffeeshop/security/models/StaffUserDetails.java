@@ -1,4 +1,4 @@
-package org.coffeeshop.security;
+package org.coffeeshop.security.models;
 
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;

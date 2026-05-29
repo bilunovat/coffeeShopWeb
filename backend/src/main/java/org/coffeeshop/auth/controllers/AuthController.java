@@ -3,7 +3,7 @@ package org.coffeeshop.auth.controllers;
 import jakarta.validation.Valid;
 import org.coffeeshop.auth.dtos.AuthResponseDto;
 import org.coffeeshop.auth.dtos.LoginRequestDto;
-import org.coffeeshop.security.StaffUserDetails;
+import org.coffeeshop.security.models.StaffUserDetails;
 import org.coffeeshop.security.services.JwtService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
