@@ -645,8 +645,8 @@ class StaffControllerTests {
 
         /**
          * Verifies that updating a staff member with a null role returns 400 Bad Request, as
-         * the @NotBlank constraint on UpdateStaffDto.role rejects null values, and that a subsequent
-         * GET confirms the existing staff member was not modified.
+         * the @NotBlank constraint on UpdateStaffDto.role rejects null values, and that a
+         * subsequent GET confirms the existing staff member was not modified.
          *
          * @throws Exception if the MockMvc request fails
          */
